@@ -19,7 +19,22 @@ public class Task1 {
         numbers.forEach( (element) -> {
             element = random.nextInt(11);
             System.out.println("replaced with random: "+ element);
-        }  );
+        }
+        );
+
+        //create a thread
+        Runnable run = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("my thread works");
+            }
+        };
+        Thread myThread = new Thread(run);
+        myThread.start();
+
+        //create a thread with lambda
+        Thread myThreadL = new Thread( () -> System.out.println("my thread works with lambda"));
+        myThreadL.start();
 
     }
 
